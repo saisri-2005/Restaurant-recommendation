@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import MapComponent from './components/MapComponent';
 import './App.css';
 
-const API_URL = 'http://localhost:5000/api/restaurants';
+const API_URL =
+  'https://restaurant-recommendation-hcpc.onrender.com/api/restaurants';
 
 function App() {
   const [selectedRestaurant, setSelectedRestaurant] = useState(null);
@@ -67,8 +68,9 @@ function App() {
 
         setRestaurants([]);
         setSelectedRestaurant(null);
+
         setError(
-          'Unable to fetch restaurants. Please check whether the backend server is running.'
+          'Unable to fetch restaurants. Please try again.'
         );
 
       } finally {
@@ -173,7 +175,7 @@ function App() {
             </p>
           )}
 
-        {/* ================= RESTAURANT RESULTS ================= */}
+        {/* ================= NO RESULTS ================= */}
 
         {!loading &&
           !error &&
